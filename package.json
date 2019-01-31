@@ -1,7 +1,7 @@
 {
   "name": "vue-leaflet-plugin",
   "description": "vue leaflet map plugin",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "author": "Xiaofeng Wang <littlewindwang@hotamil.com>",
   "license": "MIT",
   "main": "dist/vue-leaflet-plugin.js",

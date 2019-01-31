@@ -14,7 +14,7 @@
     data() {
       return {
         map: {},
-        options: {
+        mapOptions: {
           zoom: 13,
           center: [40.7128, -74.0060],
           url: 'http://{s}.tile.osm.org/{z}/{x}/{y}.png',
@@ -27,12 +27,17 @@
         type: String,
         required: true,
         default: 'myfirstmap'
+      },
+      options:{
+        type:Object,
+        default:this.mapOptions
       }
     },
 
     mounted() {
-      this.map = L.map(this.id, this.options);
-      L.tileLayer(this.options.url).addTo(this.map);
+      this.mapOptions=Object.assign(this.mapOptions,this.options);
+      this.map = L.map(this.id, this.mapOptions);
+      L.tileLayer(this.mapOptions.url).addTo(this.map);
     },
     methods: {
       initResize() {//this is for display:none scenario
