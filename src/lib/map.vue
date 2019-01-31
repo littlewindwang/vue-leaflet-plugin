@@ -1,6 +1,6 @@
 <template>
   <div :id="id" class="default-leaflet-map-container">
-    <slot></slot>
+    <!--<slot></slot>-->
   </div>
 </template>
 
@@ -38,6 +38,7 @@
       this.mapOptions=Object.assign(this.mapOptions,this.options);
       this.map = L.map(this.id, this.mapOptions);
       L.tileLayer(this.mapOptions.url).addTo(this.map);
+      this.$mapbus.$emit('mapLoaded',this.map);
     },
     methods: {
       initResize() {//this is for display:none scenario

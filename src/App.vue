@@ -3,7 +3,10 @@
     <!--<vue-leaflet-plugin></vue-leaflet-plugin>-->
     <!--<leafletmap id="myfirstmap"></leafletmap>-->
     <div class="first-container">
-      <Lmap id="myfirstmap" ref="myfirstmap"></Lmap>
+      <Lmap id="myfirstmap" ref="myfirstmap">
+
+        <Lmarker></Lmarker>
+      </Lmap>
 
     </div>
     <br>
@@ -12,8 +15,7 @@
 
     <div v-show='showMap' class="second-container">
       <Lmap id="mysecondmap" ref="mysecondmap" :options="this.secondOptions">
-
-
+        <Lmarker></Lmarker>
 
 
       </Lmap>
@@ -40,7 +42,7 @@
     methods: {
       handleClick() {
         this.showMap = !this.showMap;
-        this.$refs.secondMap.initResize();
+        this.$refs.mysecondmap.initResize();
       }
     }
   }
