@@ -5,7 +5,7 @@
     <div class="first-container">
       <Lmap id="myfirstmap" ref="myfirstmap">
 
-        <Lmarker></Lmarker>
+        <Lmarker :options="this.firstMapMarkerOptions"></Lmarker>
       </Lmap>
 
     </div>
@@ -15,9 +15,7 @@
 
     <div v-show='showMap' class="second-container">
       <Lmap id="mysecondmap" ref="mysecondmap" :options="this.secondOptions">
-        <Lmarker></Lmarker>
-
-
+        <Lmarker :options="this.secondMapMarkerOptions"></Lmarker>
       </Lmap>
     </div>
   </div>
@@ -35,8 +33,17 @@
           url: 'http://{s}.tile.osm.org/{z}/{x}/{y}.png',
           attribution: 'vue-leaflet',
           draggable: true,
+        },
+        firstMapMarkerOptions: {
+          LatLng:[40.7128, -74.0060]
+        },
+
+
+        secondMapMarkerOptions: {
+          LatLng:[41.7128,-74.0060]
         }
       }
+
     },
     components: {},
     methods: {

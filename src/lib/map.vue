@@ -1,6 +1,6 @@
 <template>
   <div :id="id" class="default-leaflet-map-container">
-    <!--<slot></slot>-->
+    <slot></slot>
   </div>
 </template>
 
